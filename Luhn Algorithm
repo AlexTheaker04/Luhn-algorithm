@@ -1,0 +1,26 @@
+static boolean Check(String cardNo) {
+        // creations of variables
+        int Length = cardNo.length();
+        int Sum = 0;
+        boolean Second = false;
+
+        // for loop that loops backwards through the numbers
+        for (int i = Length - 1; i >= 0; i--) {
+
+            int d = cardNo.charAt(i) - '0'; // subtract 0 so it converts it to an integer.
+
+            // multiply alternating numbers by 2
+            if (Second == true)
+                d = d * 2;
+
+            // We add two digits to handle
+            // cases that make two digits
+            // after doubling
+            Sum += d / 10;
+            Sum += d % 10;
+
+            // reverse the second boolean
+            Second = !Second;
+        }
+        return (Sum % 10 == 0);
+    }
