@@ -1,3 +1,6 @@
+// This is the Luhn Algorithm, by Alex Theaker, that can tell if a credit card number is real or fake, given just the numbers.
+// It returns either True or false depending on if the card is good or not.
+//
 static boolean Check(String cardNo) {
         // creations of variables
         int Length = cardNo.length();
