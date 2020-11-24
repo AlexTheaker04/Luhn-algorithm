@@ -1,0 +1,10 @@
+static boolean ccValidation(String cardNo) {
+        int Length = cardNo.length();
+
+        if (Length < 9) {
+            return false;
+
+        } else {
+            return true;
+        }
+    }
