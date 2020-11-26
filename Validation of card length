@@ -1,4 +1,5 @@
 static boolean ccValidation(String cardNo) {
+        cardNo = cardNo.replaceAll("\s+", "") // gets rid of spaces
         int Length = cardNo.length();
 
         if (Length < 9) {
