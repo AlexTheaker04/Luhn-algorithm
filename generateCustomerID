@@ -1,0 +1,35 @@
+public static int generateCustomerID(String fileName, int ID) {
+        File readFile = new File(fileName);
+        try {
+            // creates Scanner that scans "customer_information.csv"
+            Scanner reader = new Scanner(System.in);
+            reader = new Scanner(readFile);
+            //if the line contains the current ID number, add 1 to update its value.
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                String stringID = Integer.toString(ID);
+                if (line.contains(stringID + ",")) {
+                    ID++;
+                }
+            }
+            // catches errors
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        // returns the ID value found above
+        return ID;
+    }
+    
+    
+    static public void main(String[] args) {
+    // Var declarations
+    int customerID = 1;
+    String fileName = "customer_information.csv";
+    File file = new File(fileName);
+    
+    //driver
+    if (file.exists()) {
+                    customerID = generateCustomerID(fileName, customerID);
+                }
+              
+}
